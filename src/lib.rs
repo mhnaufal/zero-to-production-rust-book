@@ -7,11 +7,6 @@ use actix_web::{web, App, HttpRequest, HttpResponse, HttpServer, Responder};
 
 pub fn run(listener: TcpListener) -> Result<Server, std::io::Error> {
     // create a Server instance without actually "running" it a.k.a we just "invoke" it
-    // let server = HttpServer::new(|| App::new().route("/health_check", web::get().to(health_check)))
-    //     .listen(listener)?
-    //     .run();
-    // Ok(server)
-    
     let server = HttpServer::new(|| {
         App::new()
             .route("/health-check", web::get().to(health_check))

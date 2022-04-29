@@ -11,7 +11,7 @@ fn spawn_app() -> String {
 
     // run the server as a background task without waiting for completion
     let _ = tokio::spawn(server);
-    format!("http://127.0.0.1:{}", port)
+    format!("http://127.0.0.1:{}", port) // don't forget the "http://"
 }
 
 #[actix_web::test]

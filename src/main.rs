@@ -10,7 +10,7 @@ async fn main() -> std::io::Result<()> {
     let port = address.local_addr().unwrap().port();
 
     // call the run() method in lib.rs and await for the connection
-    // actual "run" is in here
+    // the actual "running" process is in here
     println!("Run server on {}", port);
     run(address)?.await
 }

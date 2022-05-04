@@ -6,12 +6,13 @@ use zero2prod::run;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    let p = env::var("PORT")
+    let port = env::var("PORT")
         .unwrap_or_else(|_| 3000.to_string())
         .parse::<u16>()
         .unwrap();
 
-    let dynamic_address = format!("0.0.0.0:{}", p);
+    // let dynamic_address = format!("0.0.0.0:{}", p);
+    let dynamic_address = format!("127.0.0.1:{}", port);
 
     let address = TcpListener::bind(dynamic_address)?;
     let port = address.local_addr().unwrap().port();

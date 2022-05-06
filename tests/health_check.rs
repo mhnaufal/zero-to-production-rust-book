@@ -63,6 +63,8 @@ async fn subscribe_returns_400_when_data_is_missing() {
         ("", "missing both name and email"),
     ];
 
+    // this one is called `table-driven test` or `parametrised test`
+    // hanndled bad inputs in one logic instead of duplicating it
     for (invalid_body, error_message) in test_cases {
         // Act
         let response = client

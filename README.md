@@ -25,3 +25,9 @@
 
 - We use the **tests** folder to seperate between actual business logic and the test cases
 - **tokio::spawn** takes a future server and run it on background without need to waiting for its completion
+
+### Extractors
+
+- As its name, extractors are used to extract certain things that come from the incoming request
+- For example: Path, Query, JSON
+- Can handle 10 extractors per handler function
